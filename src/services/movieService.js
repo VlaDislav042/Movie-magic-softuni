@@ -8,6 +8,10 @@ const movies = [{
     description: 'fdsfsdfsd'
   }];
 
+exports.getAll = () => {
+    return [...movies];
+}
+
 exports.create = (movieData) => {
     console.log(movieData);
     movies.push(movieData);
