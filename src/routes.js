@@ -1,8 +1,10 @@
 const router = require('express').Router();
 
-const homeController = require('./controllers/homeController')
-const movieController = require('./controllers/movieController')
+const homeController = require('./controllers/homeController');
+const movieController = require('./controllers/movieController');
+const castController = require('./controllers/castController');
 
+router.use(castController);
 router.use(movieController);
 router.use(homeController);
 
