@@ -1,22 +1,14 @@
 const Movie = require('../models/Movie');
 
-const movies = [{
-    _id: '1',
-    title: 'FF9',
-    genre: 'Action',
-    director: 'Ivan Ivanov',
-    date: '2022',
-    imageUrl: '/img/the-little-mermaid.jpg',
-    rating: '5',
-    description: 'fdsfsdfsd'
-  }];
+
 
 exports.getAll = () => {
-    return [...movies];
+    const movies =  Movie.find();
+    return movies;
 }
 
 exports.getOne = (movieId) => {
-    const movie = movies.find(movie => movie._id == movieId);
+    const movie = Movie.findById(movieId);
     return movie;
 }
 
