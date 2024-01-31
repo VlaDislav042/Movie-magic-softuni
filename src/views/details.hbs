@@ -31,8 +31,7 @@
         {{#each movie.casts}}
         <div class="cast-card">
             <div class="card-img">
-                <img src="{{castImage}}"
-                    alt="{{name}}">
+                <img src="{{castImage}}" alt="{{name}}">
             </div>
             <div class="cast-info">
                 <h1>{{name}}</h1>
@@ -40,10 +39,18 @@
                 <h3>Born: {{born}}</h3>
                 <h3>Name in Movie: {{nameInMovie}}l</h3>
             </div>
+             <div class="details-btn">
+                <a href="" id="edit-button">Edit</a>
+                <a href="" id="delete-button">Delete</a>
+            </div>
         </div>
         {{else}}
-        <h2>No casts add yet</h2>
+        <div class="main-cast-card">
+            <div class="no-cast">
+                <p>There are no casts added yet...</p>
+            </div>
+        </div>
         {{/each}}
-        
+
     </div>
 </section>
