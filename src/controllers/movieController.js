@@ -17,14 +17,22 @@ router.post('/create', async(req, res) => {
     }
 });
 
-router.get('/movies/:movieId', async(req, res) => {
+/*  router.get('/movies/:movieId', async(req, res) => {
     const movieId = req.params.movieId;
     const movie = await movieService.getOne(movieId).lean();
     
 
     res.render('details', {movie});
-});
+}); TODO FIX*/
 
+router.get('/movies/:movieId', async (req, res) => {
+    const movieId = req.params.movieId;
+    const movie =  movieService.getOne(movieId).lean();
+    // const casts = await castService.getByIds(movie.casts).lean();
+
+
+    res.render('details', { movie });
+});
 router.get('/movies/:movieId/attach', async(req, res) => {
     const movie = await movieService.getOne(req.params.movieId).lean();
     const casts = await castService.getAll().lean();
